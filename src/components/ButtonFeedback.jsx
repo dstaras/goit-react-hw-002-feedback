@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ButtonFeedback = ({ btnName, countFeedback }) => {
   return btnName.map((name) => (
@@ -6,6 +7,10 @@ const ButtonFeedback = ({ btnName, countFeedback }) => {
       {name}
     </button>
   ));
+};
+ButtonFeedback.propTypes = {
+  btnName: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  countFeedback: PropTypes.func.isRequired,
 };
 
 export default ButtonFeedback;
